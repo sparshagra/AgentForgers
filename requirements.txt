@@ -5,18 +5,18 @@
 requests==2.32.4
 instagrapi==2.2.1   # Works with requests 2.32.4
 
-# LangChain ecosystem (MATCHES LOCAL ENVIRONMENT)
-langchain==1.0.5
-langchain-core==1.0.4
+# LangChain ecosystem (LOCKED & COMPATIBLE)
+langchain==0.3.6
+langchain-core==0.3.15
 langchain-community==0.3.2
-langchain-classic==1.0.0
-langsmith==0.4.42
+langchain-classic==0.0.8
+langsmith==0.1.75
 
-# LangGraph ecosystem (MATCHES LOCAL)
-langgraph==1.0.3
-langgraph-checkpoint==3.0.1
-langgraph-sdk==0.2.9
-langgraph-prebuilt==1.0.2
+# LangGraph ecosystem (MATCHES LC 0.3.x)
+langgraph==0.0.41
+langgraph-checkpoint==0.1.7
+langgraph-prebuilt==0.0.8
+langgraph-sdk==0.0.13
 
 
 # --------------------------
