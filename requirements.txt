@@ -3,20 +3,21 @@
 # --------------------------
 
 requests==2.32.4
-instagrapi==2.2.1   # Works with requests 2.32.4
+instagrapi==2.2.1
 
-# LangChain ecosystem (LOCKED & COMPATIBLE)
+# LangChain ecosystem (compatible & stable)
 langchain==0.3.6
 langchain-core==0.3.15
 langchain-community==0.3.2
 langchain-classic==1.0.0
 langsmith==0.1.75
 
-# LangGraph ecosystem (MATCHES LC 0.3.x)
+# LangGraph ecosystem (compatible with LC 0.3.x)
 langgraph==0.0.41
-langgraph-checkpoint==0.1.7
 langgraph-prebuilt==0.0.8
 langgraph-sdk==0.0.13
+langgraph-checkpoint==1.0.1     # ← FIXED VERSION
+
 
 
 # --------------------------
