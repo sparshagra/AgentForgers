@@ -180,7 +180,7 @@
 # ]
 
 from agent_memory import AgentMemory
-from langchain_core.tools import tool
+from langchain.tools import tool
 
 @tool
 def enhance_prompt_tool(userprompt: str, memory: AgentMemory = None) -> str:
@@ -301,4 +301,5 @@ ALL_TOOLS = [
     image_prompt_critic_tool,
     image_generation_tool,
     image_critic_tool,
+
 ]
