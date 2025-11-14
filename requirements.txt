@@ -5,18 +5,19 @@
 requests==2.32.4
 instagrapi==2.2.1   # Works with requests 2.32.4
 
-# Working LangChain ecosystem (compatible with requests==2.32.4)
-langchain==0.1.17
-langchain-core==0.1.31
-langchain-community==0.0.36   # IMPORTANT: must be this version
-langchain-classic==0.0.8
-langsmith==0.1.41
+# LangChain ecosystem (MATCHES LOCAL ENVIRONMENT)
+langchain==1.0.5
+langchain-core==1.0.4
+langchain-community==0.3.2
+langchain-classic==1.0.0
+langsmith==0.4.42
 
-# LangGraph (compatible with LC 0.1.x)
-langgraph==0.0.41
-langgraph-checkpoint==0.1.7
-langgraph-sdk==0.0.13
-langgraph-prebuilt==0.0.8
+# LangGraph ecosystem (MATCHES LOCAL)
+langgraph==1.0.3
+langgraph-checkpoint==3.0.1
+langgraph-sdk==0.2.9
+langgraph-prebuilt==1.0.2
+
 
 # --------------------------
 # YOUR EXISTING PACKAGES
@@ -52,9 +53,7 @@ huggingface-hub==0.36.0
 idna==3.11
 ImageIO==2.37.2
 imageio-ffmpeg==0.6.0
-
-# Removed Starlette intentionally
-
+insta==1.0.0
 Jinja2==3.1.6
 jiter==0.12.0
 jsonpatch==1.33
