@@ -1123,6 +1123,9 @@ async def register(
     save_logo(username, logo_bytes)
 
     return {"status": "registered", "username": username}
+@app.get("/")
+def root():
+    return {"status": "running"}
 
 
 @app.post("/login")
@@ -1537,3 +1540,4 @@ async def scheduler_abort(task_id: str):
     save_task(task)
 
     return {"status": "aborted", "task_id": task_id}
+
