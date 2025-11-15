@@ -1,29 +1,3 @@
-# from llm_api import call_llm, call_llm_2  # Fixed import
-
-# def run_caption_generator(outline: str, feedback: str = None):
-#     system_msg = "You are a social media copywriter. Create engaging captions with hashtags."
-    
-#     prompt = f"""Given this social media campaign outline, generate a descreption for a instagram post:
-#     make sure to not make it excessively lengthy and keep the caption and description around 30 words and include these:
-#         - A catchy caption
-#         - A short engaging description
-#         - 5 relevant hashtags
-#         Make sure the output is of the above format only consisting of those 3 things.
-#         Outline:
-#         {outline}
-#         """
-    
-#     if feedback:
-#         prompt += f"\n\nCritic Feedback:\n{feedback}\n\nRevise the caption based on this feedback:"
-    
-#     result = call_llm_2(
-#         "meta-llama/Llama-3.2-3B-Instruct", 
-#         prompt,
-#         system_prompt=system_msg,
-#         max_tokens=150,  # Moderate for captions (shorter content)
-#         temperature=0.4
-#     )
-#     return {"agent": "CaptionGenerator", "output": result.strip()}
 
 
 from llm_api import call_llm, call_llm_2  # Fixed import
