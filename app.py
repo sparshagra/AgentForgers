@@ -1085,7 +1085,19 @@ import os
 import json
 from datetime import datetime
 
+from fastapi.middleware.cors import CORSMiddleware
+
+
 app = FastAPI()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -1123,9 +1135,6 @@ async def register(
     save_logo(username, logo_bytes)
 
     return {"status": "registered", "username": username}
-@app.get("/")
-def root():
-    return {"status": "running"}
 
 
 @app.post("/login")
@@ -1540,4 +1549,3 @@ async def scheduler_abort(task_id: str):
     save_task(task)
 
     return {"status": "aborted", "task_id": task_id}
-
