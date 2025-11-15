@@ -1,4 +1,4 @@
-from llm_api import call_llm, call_llm_2  # Fixed import
+from llm_api import call_llm, call_llm_2  # import
 
 def run_image_prompt_generator(outline: str, feedback: str = None):
     system_msg = (
@@ -21,5 +21,4 @@ def run_image_prompt_generator(outline: str, feedback: str = None):
         max_tokens=300,  # Moderate for image prompts (descriptive but not too long)
         temperature=0.3
     )
-
     return {"agent": "ImagePromptGenerator", "output": result.strip()}
