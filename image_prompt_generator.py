@@ -14,11 +14,12 @@ def run_image_prompt_generator(outline: str, feedback: str = None):
     else:
         prompt += "\n\nGenerate image prompt:"
     
-    result = call_llm_2(
+    result = call_llm(
         "meta-llama/Llama-3.2-3B-Instruct",
         prompt,
         system_prompt=system_msg,
         max_tokens=300,  # Moderate for image prompts (descriptive but not too long)
         temperature=0.3
     )
+
     return {"agent": "ImagePromptGenerator", "output": result.strip()}
