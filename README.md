@@ -1006,8 +1006,6 @@ We are passionate developers building AI-powered automation tools to empower cre
 
 📧 **Email**: [divydobariya11@gmail.com](mailto:divydobariya11@gmail.com)  
 💼 **LinkedIn**: [Divy Dobariya](https://www.linkedin.com/in/divy-dobariya-92881423b)  
-🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/InstagramAI/issues)  
-💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/InstagramAI/discussions)
 
 ### We'd Love to Hear From You!
 
