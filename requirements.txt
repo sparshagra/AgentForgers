@@ -108,7 +108,7 @@ httpx==0.28.1
     #   langgraph-sdk
     #   langsmith
     #   openai
-httpx-sse==0.4.3
+
     # via -r requirements.in
 huggingface-hub==0.36.0
     # via
@@ -406,3 +406,4 @@ zstandard==0.25.0
     # via
     #   -r requirements.in
     #   langsmith
+
