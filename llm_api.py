@@ -1,34 +1,4 @@
-# import os
-# from openai import OpenAI
-# from dotenv import load_dotenv
-# load_dotenv(override=True)
-
-# def call_llm(
-#     model_id,
-#     prompt,
-#     system_prompt=None,
-#     max_tokens=120,
-#     temperature=0.2,
-# ):
-#     HF_TOKEN = os.environ.get("HF_TOKEN")
-#     assert HF_TOKEN, "HF_TOKEN must be set in environment"
-#     client = OpenAI(
-#         base_url="https://router.huggingface.co/v1",
-#         api_key=HF_TOKEN,
-#     )
-
-#     messages = []
-#     if system_prompt:
-#         messages.append({"role": "system", "content": system_prompt})
-#     messages.append({"role": "user", "content": prompt})
-#     completion = client.chat.completions.create(
-#         model=model_id,
-#         messages=messages,
-#         max_tokens=max_tokens,
-#         temperature=temperature,
-#     )
-#     return completion.choices[0].message.content.strip()
-
+# this code is for handling different llm api calls with memory integration,so we can run llm with different tokens to reduce stress on a single provider
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -79,7 +49,7 @@ def call_llm(
                 "\n".join(f"- {ctx}" for ctx in recent_contexts)
             )
 
-    # ✅ Construct the actual chat messages
+    
     messages = []
     if system_prompt:
         messages.append({"role": "system", "content": system_prompt})
@@ -88,7 +58,7 @@ def call_llm(
         "content": prompt + memory_context,  # inject compact memory here
     })
 
-    # ✅ LLM call
+ 
     completion = client.chat.completions.create(
         model=model_id,
         messages=messages,
@@ -144,7 +114,6 @@ def call_llm_2(
                 "\n".join(f"- {ctx}" for ctx in recent_contexts)
             )
 
-    # ✅ Construct the actual chat messages
     messages = []
     if system_prompt:
         messages.append({"role": "system", "content": system_prompt})
@@ -153,7 +122,7 @@ def call_llm_2(
         "content": prompt + memory_context,  # inject compact memory here
     })
 
-    # ✅ LLM call
+   
     completion = client.chat.completions.create(
         model=model_id,
         messages=messages,
@@ -170,7 +139,7 @@ def call_llm_3(
     system_prompt=None,
     max_tokens=200,
     temperature=0.2,
-    memory=None,  # 🧠 Added optional memory
+    memory=None,  
 ):
     HF_TOKEN = os.environ.get("HF_TOKEN_3")
     assert HF_TOKEN, "HF_TOKEN must be set in environment"
@@ -179,7 +148,7 @@ def call_llm_3(
         api_key=HF_TOKEN,
     )
 
-    # 🧠 SMART MEMORY INJECTION
+    # SMART MEMORY INJECTION
     memory_context = ""
     if memory:
         # Take last 5 memory entries (or fewer)
@@ -209,7 +178,7 @@ def call_llm_3(
                 "\n".join(f"- {ctx}" for ctx in recent_contexts)
             )
 
-    # ✅ Construct the actual chat messages
+    # onstruct the actual chat messages
     messages = []
     if system_prompt:
         messages.append({"role": "system", "content": system_prompt})
@@ -218,7 +187,7 @@ def call_llm_3(
         "content": prompt + memory_context,  # inject compact memory here
     })
 
-    # ✅ LLM call
+    # LLM call
     completion = client.chat.completions.create(
         model=model_id,
         messages=messages,
@@ -226,4 +195,3 @@ def call_llm_3(
         temperature=temperature,
     )
     return completion.choices[0].message.content.strip()
-
