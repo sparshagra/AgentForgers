@@ -1,30 +1,3 @@
-# from send import send_to_user  # Email function
-# from insta import post_to_instagram  # IG posting
-
-# def send_approval_email(campaign_id, user_email, campaign_data):
-#     # Compose and send approval email
-#     html_message = f"""
-#         {campaign_data['description']}
-#         <br><b>Caption:</b> {campaign_data['caption']}
-#         <br><b>Hashtags:</b> {campaign_data['hashtags']}
-#         <br>Choose: ✅ Publish | 🔄 Regenerate | ❌ Delete
-#     """
-#     send_to_user(
-#         sender_email=campaign_data['sender_email'],
-#         sender_app_password=campaign_data['sender_app_password'],
-#         user_email=user_email,
-#         caption=campaign_data['caption'],
-#         hashtags=campaign_data['hashtags'],
-#         image_path=campaign_data['image_path'],
-#         html_text=html_message
-#     )
-#     return True
-
-# def publish_to_instagram(ig_username, ig_password, image_path, caption, hashtags):
-#     # Handle IG posting and OTP/exceptions
-#     post_to_instagram(ig_username, ig_password, image_path, f"{caption}\n{hashtags}")
-#     return True
-# publisher.py
 
 import os
 from email_sender import send_to_user
@@ -49,7 +22,7 @@ def _build_caption_strings(caption_data):
         else:
             hashtags_str = str(hashtags)
     else:
-        # Fallback: treat whole thing as caption
+        # treat whole thing as caption
         cap = str(caption_data)
         desc = ""
         hashtags_str = ""
