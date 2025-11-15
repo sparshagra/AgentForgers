@@ -956,11 +956,6 @@ This project was made possible by incredible open-source tools and AI models:
 - State-of-the-art text-to-image generation
 - *Incredible image quality that makes our content creation possible!*
 
-**🧠 OpenAI / Anthropic Claude**
-- LLM models powering our intelligent agents
-- Natural language understanding and generation
-- *Thank you for advancing AI capabilities accessible to developers!*
-
 ### Open Source Libraries
 
 **Backend:**
