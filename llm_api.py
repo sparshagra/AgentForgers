@@ -107,7 +107,7 @@ def call_llm_2(
     temperature=0.2,
     memory=None,  # 🧠 Added optional memory
 ):
-    HF_TOKEN = os.environ.get("HF_TOKEN")
+    HF_TOKEN = os.environ.get("HF_TOKEN_2")
     assert HF_TOKEN, "HF_TOKEN must be set in environment"
     client = OpenAI(
         base_url="https://router.huggingface.co/v1",
@@ -172,7 +172,7 @@ def call_llm_3(
     temperature=0.2,
     memory=None,  # 🧠 Added optional memory
 ):
-    HF_TOKEN = os.environ.get("HF_TOKEN")
+    HF_TOKEN = os.environ.get("HF_TOKEN_3")
     assert HF_TOKEN, "HF_TOKEN must be set in environment"
     client = OpenAI(
         base_url="https://router.huggingface.co/v1",
@@ -226,3 +226,4 @@ def call_llm_3(
         temperature=temperature,
     )
     return completion.choices[0].message.content.strip()
+
