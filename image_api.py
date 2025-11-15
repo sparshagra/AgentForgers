@@ -19,12 +19,7 @@ def generate_image_from_prompt(prompt: str, output_dir="outputs") -> str:
     HF_TOKEN = os.environ.get("HF_TOKEN_3")
     assert HF_TOKEN, "HF_TOKEN must be set in environment"
 
-    # Initialize the HF InferenceClient (calls router automatically)
-    # client_image = InferenceClient(
-    #     provider="nscale",
-    #     api_key=HF_TOKEN,
-    # )
-
+  
     client_image = InferenceClient(
         provider="hf-inference",
         api_key=HF_TOKEN,
@@ -54,4 +49,3 @@ def generate_image_from_prompt(prompt: str, output_dir="outputs") -> str:
 
     print(f"✅  Saved image to {filepath}")
     return filepath
-
