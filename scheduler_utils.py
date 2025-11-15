@@ -18,14 +18,24 @@ def create_task(username: str, festival_name: str, festival_date_iso: str, extra
     Create a scheduled task file that will be picked up by /scheduler/run_due.
     festival_date_iso: ISO string like '2025-10-23T00:00:00' or '2025-10-23'
     """
+        # ---lexible Date/Time Parsing (handles Z, with/without time) ---
+    cleaned = festival_date_iso.strip()
+
+    # If ISO ends with Z (UTC), strip it because datetime.fromisoformat can't parse Z
+    if cleaned.endswith("Z"):
+        cleaned = cleaned[:-1]
+
     try:
-        # Try parsing with time, then fallback to date
+        # Accept full ISO datetime
+        festival_dt = datetime.fromisoformat(cleaned.replace(" ", "T"))
+    except ValueError:
+        # Accept date-only formats
         try:
-            festival_dt = datetime.fromisoformat(festival_date_iso)
-        except ValueError:
-            festival_dt = datetime.fromisoformat(festival_date_iso + "T00:00:00")
-    except Exception as e:
-        raise ValueError(f"Invalid festival_date format: {festival_date_iso}") from e
+            festival_dt = datetime.fromisoformat(cleaned + "T00:00:00")
+        except Exception as e:
+            raise ValueError(f"Invalid festival_date format: {festival_date_iso}") from e
+
+
 
     # 48 hours before
     run_at = festival_dt - timedelta(hours=48)
