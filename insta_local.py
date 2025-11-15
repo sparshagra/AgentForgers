@@ -10,7 +10,7 @@ def post_to_instagram(username, password, image_path, caption):
         image_path (str): Local image file path.
         caption (str): Caption text.
     """
-
+    final_image = image_path
     cl = Client()
 
     try:
@@ -20,7 +20,7 @@ def post_to_instagram(username, password, image_path, caption):
         raise
 
     try:
-        cl.photo_upload(image_path, caption)
+        cl.photo_upload(final_image, caption)
         print("📸 Posted successfully to Instagram")
     except Exception as e:
         print("❌ Instagram posting failed:", e)
