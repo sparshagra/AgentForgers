@@ -295,7 +295,7 @@ cp .env.example .env
 npm run dev
 ```
 
-**✅ Frontend running at:** http://localhost:5173
+**✅ Frontend running at:** http://localhost:5173 (or the link you find in terminal)
 
 ---
 
@@ -460,7 +460,7 @@ Our System uses LLM to make decisions for the next Agent selection.
 For now we have enforced conditions so that it goes in a controlled order.
 
 ### Agent Execution Flow
-This is controlled by LLM. We have enforced certain constraints so that it proceeds in the provided order.
+This is controlled by LLM. We have enforced certain constraints so that it proceeds in the provided order. This can be changed for even more agents in future scope.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
