@@ -298,7 +298,7 @@ npm run dev
 
 ### 🎯 Step 3: First-Time Configuration
 
-1. **Open your browser** → http://localhost:5173
+1. **Open your browser** → http://localhost:xxxx (check your terminal for exact link)
 2. **Register a new account** with email and password
 3. **Configure your brand**:
    - Upload logo (PNG with transparency recommended)
@@ -453,6 +453,8 @@ GET /scheduler/abort/{campaign_id}
 ---
 
 ## 🤖 Multi-Agent Workflow Deep Dive
+Our System uses LLM to make decisions for the next Agent selection. 
+For now we have enforced conditions so that it goes in a controlled order.
 
 ### Agent Execution Flow
 
@@ -985,7 +987,7 @@ We are passionate developers building AI-powered automation tools to empower cre
 - Multi-agent system design using LangGraph
 - Instagram API integration & automation
 - Email approval system implementation
-- 
+  
 
 **Sparsh Agarwal** - Backend Development & System Integration  
 - Multi-agent system design using LangGraph
