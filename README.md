@@ -10,8 +10,7 @@
 > *An AI-powered Instagram content creation and scheduling platform that automates the entire content lifecycle—from ideation to publication—using intelligent multi-agent architecture, email-based approval workflows, and automated Instagram publishing.*
 
 ### ▶️ Demo Video  
-[![Watch the video](https://img.youtube.com/vi/vd0ZHnJBjg/hqdefault.jpg)](https://youtu.be/vd0ZHnJBjg)
-
+[![Watch the video](https://i.ytimg.com/vi/vd0ZHnJBj-g/hqdefault.jpg)](https://youtu.be/vd0ZHnJBj-g)
 
 
 ---
