@@ -51,6 +51,7 @@ A coordinated team of specialized AI agents handles your content pipeline:
 
 | Agent | Responsibility |
 |-------|----------------|
+| **Orchestrator** | Llama 3.2-3B-Instruct model along with Langgraph|
 | **Prompt Enhancer** | Transforms raw ideas into detailed creative briefs |
 | **Outliner** | Structures content framework and messaging strategy |
 | **Caption Generator** | Crafts engaging captions with brand voice + hashtags |
@@ -142,6 +143,7 @@ Select Festival → Auto-Schedule → AI Generation (T-48h) → Email Approval �
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
 │  │ HuggingFace  │  │    Gmail     │  │  Instagram   │       │
 │  │  FLUX Model  │  │     SMTP     │  │     API      │       │
+│  │   Llama LLM  │  │              │  │              │       │
 │  └──────────────┘  └──────────────┘  └──────────────┘       │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -187,6 +189,7 @@ InstagramAI/
 │   ├── agents.py                     # Individual AI agent definitions
 │   ├── tools.py                      # Utility functions for agents
 │   ├── image_api.py                  # HuggingFace FLUX integration
+│   ├── llm_api.py                    # HuggingFace Llama integratoin
 │   ├── email_sender.py               # Gmail SMTP email system
 │   ├── scheduler_utils.py            # Scheduling logic
 │   ├── scheduler_runner.py           # Cron job executor
@@ -457,6 +460,7 @@ Our System uses LLM to make decisions for the next Agent selection.
 For now we have enforced conditions so that it goes in a controlled order.
 
 ### Agent Execution Flow
+This is controlled by LLM. We have enforced certain constraints so that it proceeds in the provided order.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -956,6 +960,13 @@ This project was made possible by incredible open-source tools and AI models:
 - [FLUX.1 Model](https://huggingface.co/black-forest-labs/FLUX.1-dev) by Black Forest Labs
 - State-of-the-art text-to-image generation
 - *Incredible image quality that makes our content creation possible!*
+
+**🧠 HuggingFace Llama 3.2-3B Instruct**
+- [Llama 3.2-3B Instruct](https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct) by Meta
+- Powerful 3B-parameter instruction-tuned model for chat, reasoning, and agent workflows
+- *A compact yet highly capable LLM that powers our intelligent text generation!*
+
+**
 
 ### Open Source Libraries
 
