@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Runtime data (generated at run time, not source)
+outputs/
+users/
+scheduled/
+uploads/
+
+# OS
+.DS_Store
+Thumbs.db
